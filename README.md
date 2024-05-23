@@ -29,6 +29,7 @@ Codificación One-Hot: La característica categórica type se convierte en varia
 ## 4. Modelo Utilizado: XGBoost
 XGBoost: Es un algoritmo de gradient boosting que es muy eficiente y eficaz para tareas de clasificación y regresión. En este caso, se utiliza para la clasificación binaria.
 DMatrix: Los datos se convierten en una estructura optimizada para XGBoost llamada DMatrix.
+Se utilizó Dask, que es una librería que permite manejar datasets más grandes que la memoria RAM de un ordenador mediante el uso de DataFrames distribuidos. Aquí se usa dd.read_csv para leer un archivo CSV de manera eficiente.
 
 ## 5. Entrenamiento del Modelo
 El modelo se entrena usando los datos preprocesados:
