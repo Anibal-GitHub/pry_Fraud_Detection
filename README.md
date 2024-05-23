@@ -49,3 +49,19 @@ Predicciones: Se realizan predicciones en el conjunto de prueba.
 Evaluación: Se evalúa el rendimiento del modelo utilizando diversas métricas.
 ## Conclusión
 El modelo predice si una transacción es fraudulenta o no basándose en características de la transacción. Este tipo de modelo es crucial para detectar fraudes en sistemas financieros y proteger a las organizaciones y sus clientes de actividades fraudulentas.
+
+## Análisis de la Importancia de las Características
+El gráfico de importancia de las características muestra cuáles son las variables más influyentes en la predicción de si una transacción es fraudulenta o no en el modelo de XGBoost. Vamos a detallar por qué las características oldbalanceOrg, amount, y step son tan importantes y por qué tiene sentido intuitivo que lo sean.
+
+### 1. oldbalanceOrg (Saldo Original del Remitente)
+Importancia en el Gráfico: f2 tiene la mayor importancia.
+Razón: El saldo original del remitente antes de realizar la transacción puede indicar comportamientos sospechosos. Por ejemplo, una cuenta con un saldo original muy alto que de repente hace una transacción grande podría ser una señal de lavado de dinero o un intento de fraude.
+Ejemplo Intuitivo: Si una cuenta generalmente mantiene un saldo bajo pero de repente tiene una gran suma y realiza una transacción grande, esto podría ser una bandera roja para fraude.
+### 2. amount (Monto de la Transacción)
+Importancia en el Gráfico: f1 es la segunda característica más importante.
+Razón: El monto de la transacción es crucial para identificar fraudes. Las transacciones fraudulentas suelen ser de cantidades inusualmente altas o, a veces, consistentemente bajas para evitar detección.
+Ejemplo Intuitivo: Transacciones de montos inusualmente grandes pueden ser sospechosas si no coinciden con el patrón normal de gasto del usuario.
+### 3. step (Paso de Tiempo)
+Importancia en el Gráfico: f0 es también muy importante.
+Razón: La secuencia temporal de las transacciones puede ayudar a detectar patrones fraudulentos. Las transacciones fraudulentas a menudo ocurren en ráfagas rápidas para evitar la detección.
+Ejemplo Intuitivo: Si varias transacciones grandes se realizan en un corto período de tiempo (por ejemplo, dentro de unos pocos minutos o horas), esto podría indicar un comportamiento fraudulento.
